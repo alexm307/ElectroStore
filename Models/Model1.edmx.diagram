@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e084c834a4634c58a87005407aefb5dc" Name="Diagram1" ZoomLevel="106">
+        <EntityTypeShape EntityType="SQLServerDBModel.C2in1Laptops" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQLServerDBModel.Dishwasher" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQLServerDBModel.ElectronicProduct" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQLServerDBModel.GamingLaptop" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQLServerDBModel.KitchenAppliance" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQLServerDBModel.LaptopCPU" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQLServerDBModel.LaptopGPU" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQLServerDBModel.Laptop" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQLServerDBModel.Phone" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQLServerDBModel.Refrigerator" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SQLServerDBModel.WashingMachine" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <AssociationConnector Association="SQLServerDBModel.C2in1Laptops_Laptops_LaptopID_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="SQLServerDBModel.Dishwashers_KitchenAppliances_ApplianceID_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="SQLServerDBModel.KitchenAppliances_ElectronicProducts_ProductID_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="SQLServerDBModel.Laptops_ElectronicProducts_ProductID_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="SQLServerDBModel.Phones_ElectronicProducts_ProductID_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="SQLServerDBModel.GamingLaptops_Laptops_LaptopID_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="SQLServerDBModel.Refrigerators_KitchenAppliances_ApplianceID_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="SQLServerDBModel.WashingMachines_KitchenAppliances_ApplianceID_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="SQLServerDBModel.Laptops_LaptopCPU_LaptopCPUID_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="SQLServerDBModel.Laptops_LaptopGPU_LaptopGPUID_fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

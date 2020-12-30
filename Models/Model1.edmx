@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SQLServerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="2in1Laptops">
+          <Key>
+            <PropertyRef Name="2in1ID" />
+          </Key>
+          <Property Name="2in1ID" Type="int" Nullable="false" />
+          <Property Name="Touchscreen" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NumberOfScreens" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dishwashers">
+          <Key>
+            <PropertyRef Name="DishwasherID" />
+          </Key>
+          <Property Name="DishwasherID" Type="int" Nullable="false" />
+          <Property Name="NoOfPrograms" Type="int" Nullable="false" />
+          <Property Name="StepsOfTemperature" Type="int" Nullable="false" />
+          <Property Name="LoadingCapacity" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ElectronicProducts">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Rating" Type="float" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Colour" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GamingLaptops">
+          <Key>
+            <PropertyRef Name="GamingLaptopID" />
+          </Key>
+          <Property Name="GamingLaptopID" Type="int" Nullable="false" />
+          <Property Name="RefreshRate_Hz" Type="int" Nullable="false" />
+          <Property Name="ResponseTime_ms" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KitchenAppliances">
+          <Key>
+            <PropertyRef Name="ApplianceID" />
+          </Key>
+          <Property Name="ApplianceID" Type="int" Nullable="false" />
+          <Property Name="AnnualEnergyConsumption_kWh" Type="int" Nullable="false" />
+          <Property Name="EuEnergyLabel" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SoundLevels" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LaptopCPU">
+          <Key>
+            <PropertyRef Name="LaptopCPUID" />
+          </Key>
+          <Property Name="LaptopCPUID" Type="int" Nullable="false" />
+          <Property Name="Brand" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NumberOfCores" Type="int" Nullable="false" />
+          <Property Name="Frequency_mHz" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LaptopGPU">
+          <Key>
+            <PropertyRef Name="LaptopGPUID" />
+          </Key>
+          <Property Name="LaptopGPUID" Type="int" Nullable="false" />
+          <Property Name="Brand" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DedicatedMemory_GB" Type="int" />
+        </EntityType>
+        <EntityType Name="Laptops">
+          <Key>
+            <PropertyRef Name="LaptopID" />
+          </Key>
+          <Property Name="LaptopID" Type="int" Nullable="false" />
+          <Property Name="Brand" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RAM" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CPU" Type="int" Nullable="false" />
+          <Property Name="GPU" Type="int" Nullable="false" />
+          <Property Name="Battery" Type="float" Nullable="false" />
+          <Property Name="Display" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Storage_GB" Type="int" />
+          <Property Name="DisplaySize_inches" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Phones">
+          <Key>
+            <PropertyRef Name="PhoneID" />
+          </Key>
+          <Property Name="PhoneID" Type="int" Nullable="false" />
+          <Property Name="PhoneCPU" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Battery_mAh" Type="float" Nullable="false" />
+          <Property Name="Display" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Storage_GB" Type="int" Nullable="false" />
+          <Property Name="Size_inches" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Refrigerators">
+          <Key>
+            <PropertyRef Name="RefrigeratorID" />
+          </Key>
+          <Property Name="RefrigeratorID" Type="int" Nullable="false" />
+          <Property Name="Volume" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SpecialCompartiments" Type="varchar" MaxLength="50" />
+          <Property Name="NoOfShelves" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WashingMachines">
+          <Key>
+            <PropertyRef Name="WashID" />
+          </Key>
+          <Property Name="WashID" Type="int" Nullable="false" />
+          <Property Name="LoadingType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LoadingCapacity" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NoOfPrograms" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="2in1Laptops_Laptops_LaptopID_fk">
+          <End Role="Laptops" Type="Self.Laptops" Multiplicity="1" />
+          <End Role="2in1Laptops" Type="Self.2in1Laptops" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Laptops">
+              <PropertyRef Name="LaptopID" />
+            </Principal>
+            <Dependent Role="2in1Laptops">
+              <PropertyRef Name="2in1ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dishwashers_KitchenAppliances_ApplianceID_fk">
+          <End Role="KitchenAppliances" Type="Self.KitchenAppliances" Multiplicity="1" />
+          <End Role="Dishwashers" Type="Self.Dishwashers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="KitchenAppliances">
+              <PropertyRef Name="ApplianceID" />
+            </Principal>
+            <Dependent Role="Dishwashers">
+              <PropertyRef Name="DishwasherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GamingLaptops_Laptops_LaptopID_fk">
+          <End Role="Laptops" Type="Self.Laptops" Multiplicity="1" />
+          <End Role="GamingLaptops" Type="Self.GamingLaptops" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Laptops">
+              <PropertyRef Name="LaptopID" />
+            </Principal>
+            <Dependent Role="GamingLaptops">
+              <PropertyRef Name="GamingLaptopID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KitchenAppliances_ElectronicProducts_ProductID_fk">
+          <End Role="ElectronicProducts" Type="Self.ElectronicProducts" Multiplicity="1" />
+          <End Role="KitchenAppliances" Type="Self.KitchenAppliances" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicProducts">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="KitchenAppliances">
+              <PropertyRef Name="ApplianceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Laptops_ElectronicProducts_ProductID_fk">
+          <End Role="ElectronicProducts" Type="Self.ElectronicProducts" Multiplicity="1" />
+          <End Role="Laptops" Type="Self.Laptops" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicProducts">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Laptops">
+              <PropertyRef Name="LaptopID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Laptops_LaptopCPU_LaptopCPUID_fk">
+          <End Role="LaptopCPU" Type="Self.LaptopCPU" Multiplicity="1" />
+          <End Role="Laptops" Type="Self.Laptops" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LaptopCPU">
+              <PropertyRef Name="LaptopCPUID" />
+            </Principal>
+            <Dependent Role="Laptops">
+              <PropertyRef Name="CPU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Laptops_LaptopGPU_LaptopGPUID_fk">
+          <End Role="LaptopGPU" Type="Self.LaptopGPU" Multiplicity="1" />
+          <End Role="Laptops" Type="Self.Laptops" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LaptopGPU">
+              <PropertyRef Name="LaptopGPUID" />
+            </Principal>
+            <Dependent Role="Laptops">
+              <PropertyRef Name="GPU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Phones_ElectronicProducts_ProductID_fk">
+          <End Role="ElectronicProducts" Type="Self.ElectronicProducts" Multiplicity="1" />
+          <End Role="Phones" Type="Self.Phones" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicProducts">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Phones">
+              <PropertyRef Name="PhoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Refrigerators_KitchenAppliances_ApplianceID_fk">
+          <End Role="KitchenAppliances" Type="Self.KitchenAppliances" Multiplicity="1" />
+          <End Role="Refrigerators" Type="Self.Refrigerators" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="KitchenAppliances">
+              <PropertyRef Name="ApplianceID" />
+            </Principal>
+            <Dependent Role="Refrigerators">
+              <PropertyRef Name="RefrigeratorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WashingMachines_KitchenAppliances_ApplianceID_fk">
+          <End Role="KitchenAppliances" Type="Self.KitchenAppliances" Multiplicity="1" />
+          <End Role="WashingMachines" Type="Self.WashingMachines" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="KitchenAppliances">
+              <PropertyRef Name="ApplianceID" />
+            </Principal>
+            <Dependent Role="WashingMachines">
+              <PropertyRef Name="WashID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SQLServerDBModelStoreContainer">
+          <EntitySet Name="2in1Laptops" EntityType="Self.2in1Laptops" Schema="GeneralisationSpecialisation" store:Type="Tables" />
+          <EntitySet Name="Dishwashers" EntityType="Self.Dishwashers" Schema="GeneralisationSpecialisation" store:Type="Tables" />
+          <EntitySet Name="ElectronicProducts" EntityType="Self.ElectronicProducts" Schema="GeneralisationSpecialisation" store:Type="Tables" />
+          <EntitySet Name="GamingLaptops" EntityType="Self.GamingLaptops" Schema="GeneralisationSpecialisation" store:Type="Tables" />
+          <EntitySet Name="KitchenAppliances" EntityType="Self.KitchenAppliances" Schema="GeneralisationSpecialisation" store:Type="Tables" />
+          <EntitySet Name="LaptopCPU" EntityType="Self.LaptopCPU" Schema="GeneralisationSpecialisation" store:Type="Tables" />
+          <EntitySet Name="LaptopGPU" EntityType="Self.LaptopGPU" Schema="GeneralisationSpecialisation" store:Type="Tables" />
+          <EntitySet Name="Laptops" EntityType="Self.Laptops" Schema="GeneralisationSpecialisation" store:Type="Tables" />
+          <EntitySet Name="Phones" EntityType="Self.Phones" Schema="GeneralisationSpecialisation" store:Type="Tables" />
+          <EntitySet Name="Refrigerators" EntityType="Self.Refrigerators" Schema="GeneralisationSpecialisation" store:Type="Tables" />
+          <EntitySet Name="WashingMachines" EntityType="Self.WashingMachines" Schema="GeneralisationSpecialisation" store:Type="Tables" />
+          <AssociationSet Name="2in1Laptops_Laptops_LaptopID_fk" Association="Self.2in1Laptops_Laptops_LaptopID_fk">
+            <End Role="Laptops" EntitySet="Laptops" />
+            <End Role="2in1Laptops" EntitySet="2in1Laptops" />
+          </AssociationSet>
+          <AssociationSet Name="Dishwashers_KitchenAppliances_ApplianceID_fk" Association="Self.Dishwashers_KitchenAppliances_ApplianceID_fk">
+            <End Role="KitchenAppliances" EntitySet="KitchenAppliances" />
+            <End Role="Dishwashers" EntitySet="Dishwashers" />
+          </AssociationSet>
+          <AssociationSet Name="GamingLaptops_Laptops_LaptopID_fk" Association="Self.GamingLaptops_Laptops_LaptopID_fk">
+            <End Role="Laptops" EntitySet="Laptops" />
+            <End Role="GamingLaptops" EntitySet="GamingLaptops" />
+          </AssociationSet>
+          <AssociationSet Name="KitchenAppliances_ElectronicProducts_ProductID_fk" Association="Self.KitchenAppliances_ElectronicProducts_ProductID_fk">
+            <End Role="ElectronicProducts" EntitySet="ElectronicProducts" />
+            <End Role="KitchenAppliances" EntitySet="KitchenAppliances" />
+          </AssociationSet>
+          <AssociationSet Name="Laptops_ElectronicProducts_ProductID_fk" Association="Self.Laptops_ElectronicProducts_ProductID_fk">
+            <End Role="ElectronicProducts" EntitySet="ElectronicProducts" />
+            <End Role="Laptops" EntitySet="Laptops" />
+          </AssociationSet>
+          <AssociationSet Name="Laptops_LaptopCPU_LaptopCPUID_fk" Association="Self.Laptops_LaptopCPU_LaptopCPUID_fk">
+            <End Role="LaptopCPU" EntitySet="LaptopCPU" />
+            <End Role="Laptops" EntitySet="Laptops" />
+          </AssociationSet>
+          <AssociationSet Name="Laptops_LaptopGPU_LaptopGPUID_fk" Association="Self.Laptops_LaptopGPU_LaptopGPUID_fk">
+            <End Role="LaptopGPU" EntitySet="LaptopGPU" />
+            <End Role="Laptops" EntitySet="Laptops" />
+          </AssociationSet>
+          <AssociationSet Name="Phones_ElectronicProducts_ProductID_fk" Association="Self.Phones_ElectronicProducts_ProductID_fk">
+            <End Role="ElectronicProducts" EntitySet="ElectronicProducts" />
+            <End Role="Phones" EntitySet="Phones" />
+          </AssociationSet>
+          <AssociationSet Name="Refrigerators_KitchenAppliances_ApplianceID_fk" Association="Self.Refrigerators_KitchenAppliances_ApplianceID_fk">
+            <End Role="KitchenAppliances" EntitySet="KitchenAppliances" />
+            <End Role="Refrigerators" EntitySet="Refrigerators" />
+          </AssociationSet>
+          <AssociationSet Name="WashingMachines_KitchenAppliances_ApplianceID_fk" Association="Self.WashingMachines_KitchenAppliances_ApplianceID_fk">
+            <End Role="KitchenAppliances" EntitySet="KitchenAppliances" />
+            <End Role="WashingMachines" EntitySet="WashingMachines" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SQLServerDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C2in1Laptops">
+          <Key>
+            <PropertyRef Name="C2in1ID" />
+          </Key>
+          <Property Name="C2in1ID" Type="Int32" Nullable="false" />
+          <Property Name="Touchscreen" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumberOfScreens" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Laptop" Relationship="Self.C2in1Laptops_Laptops_LaptopID_fk" FromRole="C2in1Laptops" ToRole="Laptops" />
+        </EntityType>
+        <EntityType Name="Dishwasher">
+          <Key>
+            <PropertyRef Name="DishwasherID" />
+          </Key>
+          <Property Name="DishwasherID" Type="Int32" Nullable="false" />
+          <Property Name="NoOfPrograms" Type="Int32" Nullable="false" />
+          <Property Name="StepsOfTemperature" Type="Int32" Nullable="false" />
+          <Property Name="LoadingCapacity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="KitchenAppliance" Relationship="Self.Dishwashers_KitchenAppliances_ApplianceID_fk" FromRole="Dishwashers" ToRole="KitchenAppliances" />
+        </EntityType>
+        <EntityType Name="ElectronicProduct">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Rating" Type="Double" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Colour" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="KitchenAppliance" Relationship="Self.KitchenAppliances_ElectronicProducts_ProductID_fk" FromRole="ElectronicProducts" ToRole="KitchenAppliances" />
+          <NavigationProperty Name="Laptop" Relationship="Self.Laptops_ElectronicProducts_ProductID_fk" FromRole="ElectronicProducts" ToRole="Laptops" />
+          <NavigationProperty Name="Phone" Relationship="Self.Phones_ElectronicProducts_ProductID_fk" FromRole="ElectronicProducts" ToRole="Phones" />
+        </EntityType>
+        <EntityType Name="GamingLaptop">
+          <Key>
+            <PropertyRef Name="GamingLaptopID" />
+          </Key>
+          <Property Name="GamingLaptopID" Type="Int32" Nullable="false" />
+          <Property Name="RefreshRate_Hz" Type="Int32" Nullable="false" />
+          <Property Name="ResponseTime_ms" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Laptop" Relationship="Self.GamingLaptops_Laptops_LaptopID_fk" FromRole="GamingLaptops" ToRole="Laptops" />
+        </EntityType>
+        <EntityType Name="KitchenAppliance">
+          <Key>
+            <PropertyRef Name="ApplianceID" />
+          </Key>
+          <Property Name="ApplianceID" Type="Int32" Nullable="false" />
+          <Property Name="AnnualEnergyConsumption_kWh" Type="Int32" Nullable="false" />
+          <Property Name="EuEnergyLabel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SoundLevels" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Dishwasher" Relationship="Self.Dishwashers_KitchenAppliances_ApplianceID_fk" FromRole="KitchenAppliances" ToRole="Dishwashers" />
+          <NavigationProperty Name="ElectronicProduct" Relationship="Self.KitchenAppliances_ElectronicProducts_ProductID_fk" FromRole="KitchenAppliances" ToRole="ElectronicProducts" />
+          <NavigationProperty Name="Refrigerator" Relationship="Self.Refrigerators_KitchenAppliances_ApplianceID_fk" FromRole="KitchenAppliances" ToRole="Refrigerators" />
+          <NavigationProperty Name="WashingMachine" Relationship="Self.WashingMachines_KitchenAppliances_ApplianceID_fk" FromRole="KitchenAppliances" ToRole="WashingMachines" />
+        </EntityType>
+        <EntityType Name="LaptopCPU">
+          <Key>
+            <PropertyRef Name="LaptopCPUID" />
+          </Key>
+          <Property Name="LaptopCPUID" Type="Int32" Nullable="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumberOfCores" Type="Int32" Nullable="false" />
+          <Property Name="Frequency_mHz" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Laptops" Relationship="Self.Laptops_LaptopCPU_LaptopCPUID_fk" FromRole="LaptopCPU" ToRole="Laptops" />
+        </EntityType>
+        <EntityType Name="LaptopGPU">
+          <Key>
+            <PropertyRef Name="LaptopGPUID" />
+          </Key>
+          <Property Name="LaptopGPUID" Type="Int32" Nullable="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DedicatedMemory_GB" Type="Int32" />
+          <NavigationProperty Name="Laptops" Relationship="Self.Laptops_LaptopGPU_LaptopGPUID_fk" FromRole="LaptopGPU" ToRole="Laptops" />
+        </EntityType>
+        <EntityType Name="Laptop">
+          <Key>
+            <PropertyRef Name="LaptopID" />
+          </Key>
+          <Property Name="LaptopID" Type="Int32" Nullable="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RAM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CPU" Type="Int32" Nullable="false" />
+          <Property Name="GPU" Type="Int32" Nullable="false" />
+          <Property Name="Battery" Type="Double" Nullable="false" />
+          <Property Name="Display" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Storage_GB" Type="Int32" />
+          <Property Name="DisplaySize_inches" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="C2in1Laptops" Relationship="Self.C2in1Laptops_Laptops_LaptopID_fk" FromRole="Laptops" ToRole="C2in1Laptops" />
+          <NavigationProperty Name="ElectronicProduct" Relationship="Self.Laptops_ElectronicProducts_ProductID_fk" FromRole="Laptops" ToRole="ElectronicProducts" />
+          <NavigationProperty Name="GamingLaptop" Relationship="Self.GamingLaptops_Laptops_LaptopID_fk" FromRole="Laptops" ToRole="GamingLaptops" />
+          <NavigationProperty Name="LaptopCPU" Relationship="Self.Laptops_LaptopCPU_LaptopCPUID_fk" FromRole="Laptops" ToRole="LaptopCPU" />
+          <NavigationProperty Name="LaptopGPU" Relationship="Self.Laptops_LaptopGPU_LaptopGPUID_fk" FromRole="Laptops" ToRole="LaptopGPU" />
+        </EntityType>
+        <EntityType Name="Phone">
+          <Key>
+            <PropertyRef Name="PhoneID" />
+          </Key>
+          <Property Name="PhoneID" Type="Int32" Nullable="false" />
+          <Property Name="PhoneCPU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Battery_mAh" Type="Double" Nullable="false" />
+          <Property Name="Display" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Storage_GB" Type="Int32" Nullable="false" />
+          <Property Name="Size_inches" Type="Double" Nullable="false" />
+          <NavigationProperty Name="ElectronicProduct" Relationship="Self.Phones_ElectronicProducts_ProductID_fk" FromRole="Phones" ToRole="ElectronicProducts" />
+        </EntityType>
+        <EntityType Name="Refrigerator">
+          <Key>
+            <PropertyRef Name="RefrigeratorID" />
+          </Key>
+          <Property Name="RefrigeratorID" Type="Int32" Nullable="false" />
+          <Property Name="Volume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SpecialCompartiments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NoOfShelves" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="KitchenAppliance" Relationship="Self.Refrigerators_KitchenAppliances_ApplianceID_fk" FromRole="Refrigerators" ToRole="KitchenAppliances" />
+        </EntityType>
+        <EntityType Name="WashingMachine">
+          <Key>
+            <PropertyRef Name="WashID" />
+          </Key>
+          <Property Name="WashID" Type="Int32" Nullable="false" />
+          <Property Name="LoadingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LoadingCapacity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NoOfPrograms" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="KitchenAppliance" Relationship="Self.WashingMachines_KitchenAppliances_ApplianceID_fk" FromRole="WashingMachines" ToRole="KitchenAppliances" />
+        </EntityType>
+        <Association Name="C2in1Laptops_Laptops_LaptopID_fk">
+          <End Role="Laptops" Type="Self.Laptop" Multiplicity="1" />
+          <End Role="C2in1Laptops" Type="Self.C2in1Laptops" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Laptops">
+              <PropertyRef Name="LaptopID" />
+            </Principal>
+            <Dependent Role="C2in1Laptops">
+              <PropertyRef Name="C2in1ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dishwashers_KitchenAppliances_ApplianceID_fk">
+          <End Role="KitchenAppliances" Type="Self.KitchenAppliance" Multiplicity="1" />
+          <End Role="Dishwashers" Type="Self.Dishwasher" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="KitchenAppliances">
+              <PropertyRef Name="ApplianceID" />
+            </Principal>
+            <Dependent Role="Dishwashers">
+              <PropertyRef Name="DishwasherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KitchenAppliances_ElectronicProducts_ProductID_fk">
+          <End Role="ElectronicProducts" Type="Self.ElectronicProduct" Multiplicity="1" />
+          <End Role="KitchenAppliances" Type="Self.KitchenAppliance" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicProducts">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="KitchenAppliances">
+              <PropertyRef Name="ApplianceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Laptops_ElectronicProducts_ProductID_fk">
+          <End Role="ElectronicProducts" Type="Self.ElectronicProduct" Multiplicity="1" />
+          <End Role="Laptops" Type="Self.Laptop" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicProducts">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Laptops">
+              <PropertyRef Name="LaptopID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Phones_ElectronicProducts_ProductID_fk">
+          <End Role="ElectronicProducts" Type="Self.ElectronicProduct" Multiplicity="1" />
+          <End Role="Phones" Type="Self.Phone" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicProducts">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Phones">
+              <PropertyRef Name="PhoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GamingLaptops_Laptops_LaptopID_fk">
+          <End Role="Laptops" Type="Self.Laptop" Multiplicity="1" />
+          <End Role="GamingLaptops" Type="Self.GamingLaptop" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Laptops">
+              <PropertyRef Name="LaptopID" />
+            </Principal>
+            <Dependent Role="GamingLaptops">
+              <PropertyRef Name="GamingLaptopID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Refrigerators_KitchenAppliances_ApplianceID_fk">
+          <End Role="KitchenAppliances" Type="Self.KitchenAppliance" Multiplicity="1" />
+          <End Role="Refrigerators" Type="Self.Refrigerator" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="KitchenAppliances">
+              <PropertyRef Name="ApplianceID" />
+            </Principal>
+            <Dependent Role="Refrigerators">
+              <PropertyRef Name="RefrigeratorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WashingMachines_KitchenAppliances_ApplianceID_fk">
+          <End Role="KitchenAppliances" Type="Self.KitchenAppliance" Multiplicity="1" />
+          <End Role="WashingMachines" Type="Self.WashingMachine" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="KitchenAppliances">
+              <PropertyRef Name="ApplianceID" />
+            </Principal>
+            <Dependent Role="WashingMachines">
+              <PropertyRef Name="WashID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Laptops_LaptopCPU_LaptopCPUID_fk">
+          <End Role="LaptopCPU" Type="Self.LaptopCPU" Multiplicity="1" />
+          <End Role="Laptops" Type="Self.Laptop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LaptopCPU">
+              <PropertyRef Name="LaptopCPUID" />
+            </Principal>
+            <Dependent Role="Laptops">
+              <PropertyRef Name="CPU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Laptops_LaptopGPU_LaptopGPUID_fk">
+          <End Role="LaptopGPU" Type="Self.LaptopGPU" Multiplicity="1" />
+          <End Role="Laptops" Type="Self.Laptop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LaptopGPU">
+              <PropertyRef Name="LaptopGPUID" />
+            </Principal>
+            <Dependent Role="Laptops">
+              <PropertyRef Name="GPU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SQLServerDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C2in1Laptops" EntityType="Self.C2in1Laptops" />
+          <EntitySet Name="Dishwashers" EntityType="Self.Dishwasher" />
+          <EntitySet Name="ElectronicProducts" EntityType="Self.ElectronicProduct" />
+          <EntitySet Name="GamingLaptops" EntityType="Self.GamingLaptop" />
+          <EntitySet Name="KitchenAppliances" EntityType="Self.KitchenAppliance" />
+          <EntitySet Name="LaptopCPUs" EntityType="Self.LaptopCPU" />
+          <EntitySet Name="LaptopGPUs" EntityType="Self.LaptopGPU" />
+          <EntitySet Name="Laptops" EntityType="Self.Laptop" />
+          <EntitySet Name="Phones" EntityType="Self.Phone" />
+          <EntitySet Name="Refrigerators" EntityType="Self.Refrigerator" />
+          <EntitySet Name="WashingMachines" EntityType="Self.WashingMachine" />
+          <AssociationSet Name="C2in1Laptops_Laptops_LaptopID_fk" Association="Self.C2in1Laptops_Laptops_LaptopID_fk">
+            <End Role="Laptops" EntitySet="Laptops" />
+            <End Role="C2in1Laptops" EntitySet="C2in1Laptops" />
+          </AssociationSet>
+          <AssociationSet Name="Dishwashers_KitchenAppliances_ApplianceID_fk" Association="Self.Dishwashers_KitchenAppliances_ApplianceID_fk">
+            <End Role="KitchenAppliances" EntitySet="KitchenAppliances" />
+            <End Role="Dishwashers" EntitySet="Dishwashers" />
+          </AssociationSet>
+          <AssociationSet Name="KitchenAppliances_ElectronicProducts_ProductID_fk" Association="Self.KitchenAppliances_ElectronicProducts_ProductID_fk">
+            <End Role="ElectronicProducts" EntitySet="ElectronicProducts" />
+            <End Role="KitchenAppliances" EntitySet="KitchenAppliances" />
+          </AssociationSet>
+          <AssociationSet Name="Laptops_ElectronicProducts_ProductID_fk" Association="Self.Laptops_ElectronicProducts_ProductID_fk">
+            <End Role="ElectronicProducts" EntitySet="ElectronicProducts" />
+            <End Role="Laptops" EntitySet="Laptops" />
+          </AssociationSet>
+          <AssociationSet Name="Phones_ElectronicProducts_ProductID_fk" Association="Self.Phones_ElectronicProducts_ProductID_fk">
+            <End Role="ElectronicProducts" EntitySet="ElectronicProducts" />
+            <End Role="Phones" EntitySet="Phones" />
+          </AssociationSet>
+          <AssociationSet Name="GamingLaptops_Laptops_LaptopID_fk" Association="Self.GamingLaptops_Laptops_LaptopID_fk">
+            <End Role="Laptops" EntitySet="Laptops" />
+            <End Role="GamingLaptops" EntitySet="GamingLaptops" />
+          </AssociationSet>
+          <AssociationSet Name="Refrigerators_KitchenAppliances_ApplianceID_fk" Association="Self.Refrigerators_KitchenAppliances_ApplianceID_fk">
+            <End Role="KitchenAppliances" EntitySet="KitchenAppliances" />
+            <End Role="Refrigerators" EntitySet="Refrigerators" />
+          </AssociationSet>
+          <AssociationSet Name="WashingMachines_KitchenAppliances_ApplianceID_fk" Association="Self.WashingMachines_KitchenAppliances_ApplianceID_fk">
+            <End Role="KitchenAppliances" EntitySet="KitchenAppliances" />
+            <End Role="WashingMachines" EntitySet="WashingMachines" />
+          </AssociationSet>
+          <AssociationSet Name="Laptops_LaptopCPU_LaptopCPUID_fk" Association="Self.Laptops_LaptopCPU_LaptopCPUID_fk">
+            <End Role="LaptopCPU" EntitySet="LaptopCPUs" />
+            <End Role="Laptops" EntitySet="Laptops" />
+          </AssociationSet>
+          <AssociationSet Name="Laptops_LaptopGPU_LaptopGPUID_fk" Association="Self.Laptops_LaptopGPU_LaptopGPUID_fk">
+            <End Role="LaptopGPU" EntitySet="LaptopGPUs" />
+            <End Role="Laptops" EntitySet="Laptops" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SQLServerDBModelStoreContainer" CdmEntityContainer="SQLServerDBEntities1">
+          <EntitySetMapping Name="C2in1Laptops">
+            <EntityTypeMapping TypeName="SQLServerDBModel.C2in1Laptops">
+              <MappingFragment StoreEntitySet="2in1Laptops">
+                <ScalarProperty Name="C2in1ID" ColumnName="2in1ID" />
+                <ScalarProperty Name="Touchscreen" ColumnName="Touchscreen" />
+                <ScalarProperty Name="NumberOfScreens" ColumnName="NumberOfScreens" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dishwashers">
+            <EntityTypeMapping TypeName="SQLServerDBModel.Dishwasher">
+              <MappingFragment StoreEntitySet="Dishwashers">
+                <ScalarProperty Name="DishwasherID" ColumnName="DishwasherID" />
+                <ScalarProperty Name="NoOfPrograms" ColumnName="NoOfPrograms" />
+                <ScalarProperty Name="StepsOfTemperature" ColumnName="StepsOfTemperature" />
+                <ScalarProperty Name="LoadingCapacity" ColumnName="LoadingCapacity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectronicProducts">
+            <EntityTypeMapping TypeName="SQLServerDBModel.ElectronicProduct">
+              <MappingFragment StoreEntitySet="ElectronicProducts">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Colour" ColumnName="Colour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GamingLaptops">
+            <EntityTypeMapping TypeName="SQLServerDBModel.GamingLaptop">
+              <MappingFragment StoreEntitySet="GamingLaptops">
+                <ScalarProperty Name="GamingLaptopID" ColumnName="GamingLaptopID" />
+                <ScalarProperty Name="RefreshRate_Hz" ColumnName="RefreshRate_Hz" />
+                <ScalarProperty Name="ResponseTime_ms" ColumnName="ResponseTime_ms" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KitchenAppliances">
+            <EntityTypeMapping TypeName="SQLServerDBModel.KitchenAppliance">
+              <MappingFragment StoreEntitySet="KitchenAppliances">
+                <ScalarProperty Name="ApplianceID" ColumnName="ApplianceID" />
+                <ScalarProperty Name="AnnualEnergyConsumption_kWh" ColumnName="AnnualEnergyConsumption_kWh" />
+                <ScalarProperty Name="EuEnergyLabel" ColumnName="EuEnergyLabel" />
+                <ScalarProperty Name="SoundLevels" ColumnName="SoundLevels" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LaptopCPUs">
+            <EntityTypeMapping TypeName="SQLServerDBModel.LaptopCPU">
+              <MappingFragment StoreEntitySet="LaptopCPU">
+                <ScalarProperty Name="LaptopCPUID" ColumnName="LaptopCPUID" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="NumberOfCores" ColumnName="NumberOfCores" />
+                <ScalarProperty Name="Frequency_mHz" ColumnName="Frequency_mHz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LaptopGPUs">
+            <EntityTypeMapping TypeName="SQLServerDBModel.LaptopGPU">
+              <MappingFragment StoreEntitySet="LaptopGPU">
+                <ScalarProperty Name="LaptopGPUID" ColumnName="LaptopGPUID" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="DedicatedMemory_GB" ColumnName="DedicatedMemory_GB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Laptops">
+            <EntityTypeMapping TypeName="SQLServerDBModel.Laptop">
+              <MappingFragment StoreEntitySet="Laptops">
+                <ScalarProperty Name="LaptopID" ColumnName="LaptopID" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="RAM" ColumnName="RAM" />
+                <ScalarProperty Name="CPU" ColumnName="CPU" />
+                <ScalarProperty Name="GPU" ColumnName="GPU" />
+                <ScalarProperty Name="Battery" ColumnName="Battery" />
+                <ScalarProperty Name="Display" ColumnName="Display" />
+                <ScalarProperty Name="Storage_GB" ColumnName="Storage_GB" />
+                <ScalarProperty Name="DisplaySize_inches" ColumnName="DisplaySize_inches" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Phones">
+            <EntityTypeMapping TypeName="SQLServerDBModel.Phone">
+              <MappingFragment StoreEntitySet="Phones">
+                <ScalarProperty Name="PhoneID" ColumnName="PhoneID" />
+                <ScalarProperty Name="PhoneCPU" ColumnName="PhoneCPU" />
+                <ScalarProperty Name="Battery_mAh" ColumnName="Battery_mAh" />
+                <ScalarProperty Name="Display" ColumnName="Display" />
+                <ScalarProperty Name="Storage_GB" ColumnName="Storage_GB" />
+                <ScalarProperty Name="Size_inches" ColumnName="Size_inches" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Refrigerators">
+            <EntityTypeMapping TypeName="SQLServerDBModel.Refrigerator">
+              <MappingFragment StoreEntitySet="Refrigerators">
+                <ScalarProperty Name="RefrigeratorID" ColumnName="RefrigeratorID" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="SpecialCompartiments" ColumnName="SpecialCompartiments" />
+                <ScalarProperty Name="NoOfShelves" ColumnName="NoOfShelves" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WashingMachines">
+            <EntityTypeMapping TypeName="SQLServerDBModel.WashingMachine">
+              <MappingFragment StoreEntitySet="WashingMachines">
+                <ScalarProperty Name="WashID" ColumnName="WashID" />
+                <ScalarProperty Name="LoadingType" ColumnName="LoadingType" />
+                <ScalarProperty Name="LoadingCapacity" ColumnName="LoadingCapacity" />
+                <ScalarProperty Name="NoOfPrograms" ColumnName="NoOfPrograms" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
