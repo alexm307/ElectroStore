@@ -21,6 +21,6 @@ namespace ElectroStore.Model
         public int Quantity { get; set; }
 
         public string Color { get; set; }
-        //kliugo8fuiyfoyiuyubliuob
+        
     }
 }
