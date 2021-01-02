@@ -34,7 +34,7 @@ Namespace Controllers
 
         ' GET: WashingMachines/Create
         Function Create() As ActionResult
-            ViewBag.WashID = New SelectList(db.KitchenAppliances, "ApplianceID", "EuEnergyLabel")
+            ViewBag.WashID = New SelectList(db.KitchenAppliances, "ApplianceID", "ApplianceID")
             Return View()
         End Function
 
@@ -49,7 +49,7 @@ Namespace Controllers
                 db.SaveChanges()
                 Return RedirectToAction("Index")
             End If
-            ViewBag.WashID = New SelectList(db.KitchenAppliances, "ApplianceID", "EuEnergyLabel", washingMachine.WashID)
+            ViewBag.WashID = New SelectList(db.KitchenAppliances, "ApplianceID", "ApplianceID", washingMachine.WashID)
             Return View(washingMachine)
         End Function
 
@@ -62,7 +62,7 @@ Namespace Controllers
             If IsNothing(washingMachine) Then
                 Return HttpNotFound()
             End If
-            ViewBag.WashID = New SelectList(db.KitchenAppliances, "ApplianceID", "EuEnergyLabel", washingMachine.WashID)
+            ViewBag.WashID = New SelectList(db.KitchenAppliances, "ApplianceID", "ApplianceID", washingMachine.WashID)
             Return View(washingMachine)
         End Function
 
@@ -77,7 +77,7 @@ Namespace Controllers
                 db.SaveChanges()
                 Return RedirectToAction("Index")
             End If
-            ViewBag.WashID = New SelectList(db.KitchenAppliances, "ApplianceID", "EuEnergyLabel", washingMachine.WashID)
+            ViewBag.WashID = New SelectList(db.KitchenAppliances, "ApplianceID", "ApplianceID", washingMachine.WashID)
             Return View(washingMachine)
         End Function
 

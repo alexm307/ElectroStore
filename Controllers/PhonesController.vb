@@ -34,7 +34,7 @@ Namespace Controllers
 
         ' GET: Phones/Create
         Function Create() As ActionResult
-            ViewBag.PhoneID = New SelectList(db.ElectronicProducts, "ProductID", "Name")
+            ViewBag.PhoneID = New SelectList(db.ElectronicProducts, "ProductID", "ProductID")
             Return View()
         End Function
 
@@ -49,7 +49,7 @@ Namespace Controllers
                 db.SaveChanges()
                 Return RedirectToAction("Index")
             End If
-            ViewBag.PhoneID = New SelectList(db.ElectronicProducts, "ProductID", "Name", phone.PhoneID)
+            ViewBag.PhoneID = New SelectList(db.ElectronicProducts, "ProductID", "ProductID", phone.PhoneID)
             Return View(phone)
         End Function
 
@@ -62,7 +62,7 @@ Namespace Controllers
             If IsNothing(phone) Then
                 Return HttpNotFound()
             End If
-            ViewBag.PhoneID = New SelectList(db.ElectronicProducts, "ProductID", "Name", phone.PhoneID)
+            ViewBag.PhoneID = New SelectList(db.ElectronicProducts, "ProductID", "ProductID", phone.PhoneID)
             Return View(phone)
         End Function
 
@@ -77,7 +77,7 @@ Namespace Controllers
                 db.SaveChanges()
                 Return RedirectToAction("Index")
             End If
-            ViewBag.PhoneID = New SelectList(db.ElectronicProducts, "ProductID", "Name", phone.PhoneID)
+            ViewBag.PhoneID = New SelectList(db.ElectronicProducts, "ProductID", "ProductID", phone.PhoneID)
             Return View(phone)
         End Function
 

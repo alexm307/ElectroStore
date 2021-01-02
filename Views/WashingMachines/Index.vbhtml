@@ -3,7 +3,7 @@
 ViewData("Title") = "Index"
 End Code
 <body style="background-image: linear-gradient(to bottom right, rgb(106, 106, 138), rgb(255,255,255))">
-    <h2>Index</h2>
+    <h2>Washing Machines</h2>
 
     <p>
         @Html.ActionLink("Create New", "Create")

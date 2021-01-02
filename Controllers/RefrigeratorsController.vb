@@ -34,7 +34,7 @@ Namespace Controllers
 
         ' GET: Refrigerators/Create
         Function Create() As ActionResult
-            ViewBag.RefrigeratorID = New SelectList(db.KitchenAppliances, "ApplianceID", "EuEnergyLabel")
+            ViewBag.RefrigeratorID = New SelectList(db.KitchenAppliances, "ApplianceID", "ApplianceID")
             Return View()
         End Function
 
@@ -49,7 +49,7 @@ Namespace Controllers
                 db.SaveChanges()
                 Return RedirectToAction("Index")
             End If
-            ViewBag.RefrigeratorID = New SelectList(db.KitchenAppliances, "ApplianceID", "EuEnergyLabel", refrigerator.RefrigeratorID)
+            ViewBag.RefrigeratorID = New SelectList(db.KitchenAppliances, "ApplianceID", "ApplianceID", refrigerator.RefrigeratorID)
             Return View(refrigerator)
         End Function
 
@@ -62,7 +62,7 @@ Namespace Controllers
             If IsNothing(refrigerator) Then
                 Return HttpNotFound()
             End If
-            ViewBag.RefrigeratorID = New SelectList(db.KitchenAppliances, "ApplianceID", "EuEnergyLabel", refrigerator.RefrigeratorID)
+            ViewBag.RefrigeratorID = New SelectList(db.KitchenAppliances, "ApplianceID", "ApplianceID", refrigerator.RefrigeratorID)
             Return View(refrigerator)
         End Function
 
@@ -77,7 +77,7 @@ Namespace Controllers
                 db.SaveChanges()
                 Return RedirectToAction("Index")
             End If
-            ViewBag.RefrigeratorID = New SelectList(db.KitchenAppliances, "ApplianceID", "EuEnergyLabel", refrigerator.RefrigeratorID)
+            ViewBag.RefrigeratorID = New SelectList(db.KitchenAppliances, "ApplianceID", "ApplianceID", refrigerator.RefrigeratorID)
             Return View(refrigerator)
         End Function
 
