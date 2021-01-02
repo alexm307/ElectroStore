@@ -2,7 +2,7 @@
 @Code
     ViewData("Title") = "Edit"
 End Code
-
+<body style="background-image: linear-gradient(to bottom right, rgb(106, 106, 138), rgb(255,255,255))">
 <h2>Edit</h2>
 
 @Using (Html.BeginForm())

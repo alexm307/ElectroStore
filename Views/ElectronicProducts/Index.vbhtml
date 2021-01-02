@@ -2,7 +2,7 @@
 @Code
 ViewData("Title") = "Index"
 End Code
-
+<body style="background-image: linear-gradient(to bottom right, rgb(106, 106, 138), rgb(255,255,255))">
 <h2>Index</h2>
 
 <p>
@@ -25,15 +25,7 @@ End Code
         <th>
             @Html.DisplayNameFor(Function(model) model.Colour)
         </th>
-        <th>
-            @Html.DisplayNameFor(Function(model) model.KitchenAppliance.EuEnergyLabel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(Function(model) model.Laptop.Brand)
-        </th>
-        <th>
-            @Html.DisplayNameFor(Function(model) model.Phone.PhoneCPU)
-        </th>
+
         <th></th>
     </tr>
 
@@ -55,18 +47,8 @@ End Code
             @Html.DisplayFor(Function(modelItem) item.Colour)
         </td>
         <td>
-            @Html.DisplayFor(Function(modelItem) item.KitchenAppliance.EuEnergyLabel)
-        </td>
-        <td>
-            @Html.DisplayFor(Function(modelItem) item.Laptop.Brand)
-        </td>
-        <td>
-            @Html.DisplayFor(Function(modelItem) item.Phone.PhoneCPU)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", New With {.id = item.ProductID }) |
-            @Html.ActionLink("Details", "Details", New With {.id = item.ProductID }) |
-            @Html.ActionLink("Delete", "Delete", New With {.id = item.ProductID })
+            @Html.ActionLink("Edit", "Edit", New With {.id = item.ProductID}) |
+            @Html.ActionLink("Details", "Details", New With {.id = item.ProductID})
         </td>
     </tr>
 Next

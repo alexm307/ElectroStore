@@ -2,7 +2,7 @@
 @Code
     ViewData("Title") = "Index"
 End Code
-
+<body style="background-image: linear-gradient(to bottom right, rgb(106, 106, 138), rgb(255,255,255))">
 <h2>Kitchen Appliances</h2>
 
 <img src="https://mydecorative.com/wp-content/uploads/2019/07/must-have-appliances-for-an-office-kitchen.jpg" alt="Kitchen Appliances" class="center-block" />
@@ -11,7 +11,7 @@ End Code
 <br />
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Kitchen Appliance (Make sure that you have created an electronic product first)", "Create")
 </p>
 <table class="table">
     <tr>
@@ -26,15 +26,6 @@ End Code
         </th>
         <th>
             @Html.DisplayNameFor(Function(model) model.SoundLevels)
-        </th>
-        <th>
-            @Html.DisplayNameFor(Function(model) model.Dishwasher.LoadingCapacity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(Function(model) model.Refrigerator.Volume)
-        </th>
-        <th>
-            @Html.DisplayNameFor(Function(model) model.WashingMachine.LoadingType)
         </th>
         <th></th>
     </tr>
@@ -54,20 +45,11 @@ End Code
                 @Html.DisplayFor(Function(modelItem) item.SoundLevels)
             </td>
             <td>
-                @Html.DisplayFor(Function(modelItem) item.Dishwasher.LoadingCapacity)
-            </td>
-            <td>
-                @Html.DisplayFor(Function(modelItem) item.Refrigerator.Volume)
-            </td>
-            <td>
-                @Html.DisplayFor(Function(modelItem) item.WashingMachine.LoadingType)
-            </td>
-            <td>
                 @Html.ActionLink("Edit", "Edit", New With {.id = item.ApplianceID}) |
-                @Html.ActionLink("Details", "Details", New With {.id = item.ApplianceID}) |
-                @Html.ActionLink("Delete", "Delete", New With {.id = item.ApplianceID})
+                @Html.ActionLink("Details", "Details", New With {.id = item.ApplianceID})
             </td>
         </tr>
     Next
 
 </table>
+

@@ -2,60 +2,81 @@
 @Code
     ViewData("Title") = "Create"
 End Code
+<body style="background-image: linear-gradient(to bottom right, rgb(106, 106, 138), rgb(255,255,255))">
+    <h2>Create</h2>
 
-<h2>Create</h2>
+    @Using (Html.BeginForm())
+        @Html.AntiForgeryToken()
 
-@Using (Html.BeginForm()) 
-    @Html.AntiForgeryToken()
-    
-    @<div class="form-horizontal">
-        <h4>KitchenAppliance</h4>
-        <hr />
-        @Html.ValidationSummary(True, "", New With { .class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(Function(model) model.ApplianceID, "ApplianceID", htmlAttributes:= New With { .class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ApplianceID", Nothing, htmlAttributes:= New With { .class = "form-control" })
-                @Html.ValidationMessageFor(Function(model) model.ApplianceID, "", New With { .class = "text-danger" })
+        @<div class="form-horizontal">
+            <h4>KitchenAppliance</h4>
+            <hr />
+            @Html.ValidationSummary(True, "", New With {.class = "text-danger"})
+            <div class="form-group">
+                @Html.LabelFor(Function(model) model.ApplianceID, htmlAttributes:=New With {.class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(Function(model) model.ApplianceID, New With {.htmlAttributes = New With {.class = "form-control"}})
+                    @Html.ValidationMessageFor(Function(model) model.ApplianceID, "", New With {.class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Function(model) model.AnnualEnergyConsumption_kWh, htmlAttributes:=New With {.class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(Function(model) model.AnnualEnergyConsumption_kWh, New With {.htmlAttributes = New With {.class = "form-control"}})
+                    @Html.ValidationMessageFor(Function(model) model.AnnualEnergyConsumption_kWh, "", New With {.class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Function(model) model.EuEnergyLabel, htmlAttributes:=New With {.class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(Function(model) model.EuEnergyLabel, New With {.htmlAttributes = New With {.class = "form-control"}})
+                    @Html.ValidationMessageFor(Function(model) model.EuEnergyLabel, "", New With {.class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(Function(model) model.SoundLevels, htmlAttributes:=New With {.class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(Function(model) model.SoundLevels, New With {.htmlAttributes = New With {.class = "form-control"}})
+                    @Html.ValidationMessageFor(Function(model) model.SoundLevels, "", New With {.class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
             </div>
         </div>
+    End Using
 
-        <div class="form-group">
-            @Html.LabelFor(Function(model) model.AnnualEnergyConsumption_kWh, htmlAttributes:= New With { .class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(Function(model) model.AnnualEnergyConsumption_kWh, New With { .htmlAttributes = New With { .class = "form-control" } })
-                @Html.ValidationMessageFor(Function(model) model.AnnualEnergyConsumption_kWh, "", New With { .class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(Function(model) model.EuEnergyLabel, htmlAttributes:= New With { .class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(Function(model) model.EuEnergyLabel, New With { .htmlAttributes = New With { .class = "form-control" } })
-                @Html.ValidationMessageFor(Function(model) model.EuEnergyLabel, "", New With { .class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(Function(model) model.SoundLevels, htmlAttributes:= New With { .class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(Function(model) model.SoundLevels, New With { .htmlAttributes = New With { .class = "form-control" } })
-                @Html.ValidationMessageFor(Function(model) model.SoundLevels, "", New With { .class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
     </div>
-End Using
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    @Section Scripts
+        @Scripts.Render("~/bundles/jqueryval")
+    End Section
 
-@Section Scripts 
-    @Scripts.Render("~/bundles/jqueryval")
-End Section
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />

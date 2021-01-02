@@ -2,7 +2,7 @@
 @Code
 ViewData("Title") = "Index"
 End Code
-
+<body style="background-image: linear-gradient(to bottom right, rgb(106, 106, 138), rgb(255,255,255))">
 <h2>Phones</h2>
 
 <img src="https://cdn.vox-cdn.com/thumbor/W0l-CJqtylo_oj0qXATSexh9CrU=/0x0:2040x1360/1200x675/filters:focal(857x517:1183x843)/cdn.vox-cdn.com/uploads/chorus_image/image/68490964/Best_Phone_Grid_2020_v2.0.jpg" alt="Phones" class="center-block" />
@@ -11,7 +11,7 @@ End Code
 <br />
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Phone (Make sure that you have created an electronic product first)", "Create")
 </p>
 
 <table class="table">
@@ -59,8 +59,7 @@ End Code
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", New With {.id = item.PhoneID}) |
-            @Html.ActionLink("Details", "Details", New With {.id = item.PhoneID }) |
-            @Html.ActionLink("Delete", "Delete", New With {.id = item.PhoneID })
+            @Html.ActionLink("Details", "Details", New With {.id = item.PhoneID })
         </td>
     </tr>
 Next

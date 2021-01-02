@@ -2,7 +2,7 @@
 @Code
     ViewData("Title") = "Create"
 End Code
-
+<body style="background-image: linear-gradient(to bottom right, rgb(106, 106, 138), rgb(255,255,255))">
 <h2>Create</h2>
 
 @Using (Html.BeginForm()) 
@@ -12,13 +12,13 @@ End Code
         <h4>Laptop</h4>
         <hr />
         @Html.ValidationSummary(True, "", New With { .class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(Function(model) model.LaptopID, "LaptopID", htmlAttributes:= New With { .class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("LaptopID", Nothing, htmlAttributes:= New With { .class = "form-control" })
-                @Html.ValidationMessageFor(Function(model) model.LaptopID, "", New With { .class = "text-danger" })
-            </div>
-        </div>
+     <div class="form-group">
+         @Html.LabelFor(Function(model) model.LaptopID, htmlAttributes:=New With {.class = "control-label col-md-2"})
+         <div class="col-md-10">
+             @Html.EditorFor(Function(model) model.LaptopID, New With {.htmlAttributes = New With {.class = "form-control"}})
+             @Html.ValidationMessageFor(Function(model) model.LaptopID, "", New With {.class = "text-danger"})
+         </div>
+     </div>
 
         <div class="form-group">
             @Html.LabelFor(Function(model) model.Brand, htmlAttributes:= New With { .class = "control-label col-md-2" })
