@@ -17,6 +17,7 @@ Partial Public Class Phone
     Public Property Display As String
     Public Property Storage_GB As Integer
     Public Property Size_inches As Double
+    Public Property Name As String
 
     Public Overridable Property ElectronicProduct As ElectronicProduct
 

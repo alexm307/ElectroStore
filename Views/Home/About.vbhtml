@@ -3,6 +3,5 @@
 End Code
 
 <h2>@ViewData("Title").</h2>
-<h3>@ViewData("Message")</h3>
 
-<p>Use this area to provide additional information.</p>
+<p>A small Project that we have done in order to learn about creating a web-based CRUD for a database</p>
