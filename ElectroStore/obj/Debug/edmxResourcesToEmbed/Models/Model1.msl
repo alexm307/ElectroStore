@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SQLServerDBModelStoreContainer" CdmEntityContainer="SQLServerDBEntities1">
+    <EntitySetMapping Name="C2in1Laptops">
+      <EntityTypeMapping TypeName="SQLServerDBModel.C2in1Laptops">
+        <MappingFragment StoreEntitySet="2in1Laptops">
+          <ScalarProperty Name="C2in1ID" ColumnName="2in1ID" />
+          <ScalarProperty Name="Touchscreen" ColumnName="Touchscreen" />
+          <ScalarProperty Name="NumberOfScreens" ColumnName="NumberOfScreens" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dishwashers">
+      <EntityTypeMapping TypeName="SQLServerDBModel.Dishwasher">
+        <MappingFragment StoreEntitySet="Dishwashers">
+          <ScalarProperty Name="DishwasherID" ColumnName="DishwasherID" />
+          <ScalarProperty Name="NoOfPrograms" ColumnName="NoOfPrograms" />
+          <ScalarProperty Name="StepsOfTemperature" ColumnName="StepsOfTemperature" />
+          <ScalarProperty Name="LoadingCapacity" ColumnName="LoadingCapacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ElectronicProducts">
+      <EntityTypeMapping TypeName="SQLServerDBModel.ElectronicProduct">
+        <MappingFragment StoreEntitySet="ElectronicProducts">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Colour" ColumnName="Colour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GamingLaptops">
+      <EntityTypeMapping TypeName="SQLServerDBModel.GamingLaptop">
+        <MappingFragment StoreEntitySet="GamingLaptops">
+          <ScalarProperty Name="GamingLaptopID" ColumnName="GamingLaptopID" />
+          <ScalarProperty Name="RefreshRate_Hz" ColumnName="RefreshRate_Hz" />
+          <ScalarProperty Name="ResponseTime_ms" ColumnName="ResponseTime_ms" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KitchenAppliances">
+      <EntityTypeMapping TypeName="SQLServerDBModel.KitchenAppliance">
+        <MappingFragment StoreEntitySet="KitchenAppliances">
+          <ScalarProperty Name="ApplianceID" ColumnName="ApplianceID" />
+          <ScalarProperty Name="AnnualEnergyConsumption_kWh" ColumnName="AnnualEnergyConsumption_kWh" />
+          <ScalarProperty Name="EuEnergyLabel" ColumnName="EuEnergyLabel" />
+          <ScalarProperty Name="SoundLevels" ColumnName="SoundLevels" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LaptopCPUs">
+      <EntityTypeMapping TypeName="SQLServerDBModel.LaptopCPU">
+        <MappingFragment StoreEntitySet="LaptopCPU">
+          <ScalarProperty Name="LaptopCPUID" ColumnName="LaptopCPUID" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="NumberOfCores" ColumnName="NumberOfCores" />
+          <ScalarProperty Name="Frequency_mHz" ColumnName="Frequency_mHz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LaptopGPUs">
+      <EntityTypeMapping TypeName="SQLServerDBModel.LaptopGPU">
+        <MappingFragment StoreEntitySet="LaptopGPU">
+          <ScalarProperty Name="LaptopGPUID" ColumnName="LaptopGPUID" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="DedicatedMemory_GB" ColumnName="DedicatedMemory_GB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Laptops">
+      <EntityTypeMapping TypeName="SQLServerDBModel.Laptop">
+        <MappingFragment StoreEntitySet="Laptops">
+          <ScalarProperty Name="LaptopID" ColumnName="LaptopID" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="CPU" ColumnName="CPU" />
+          <ScalarProperty Name="GPU" ColumnName="GPU" />
+          <ScalarProperty Name="Battery" ColumnName="Battery" />
+          <ScalarProperty Name="Display" ColumnName="Display" />
+          <ScalarProperty Name="Storage_GB" ColumnName="Storage_GB" />
+          <ScalarProperty Name="DisplaySize_inches" ColumnName="DisplaySize_inches" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phones">
+      <EntityTypeMapping TypeName="SQLServerDBModel.Phone">
+        <MappingFragment StoreEntitySet="Phones">
+          <ScalarProperty Name="PhoneID" ColumnName="PhoneID" />
+          <ScalarProperty Name="PhoneCPU" ColumnName="PhoneCPU" />
+          <ScalarProperty Name="Battery_mAh" ColumnName="Battery_mAh" />
+          <ScalarProperty Name="Display" ColumnName="Display" />
+          <ScalarProperty Name="Storage_GB" ColumnName="Storage_GB" />
+          <ScalarProperty Name="Size_inches" ColumnName="Size_inches" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Refrigerators">
+      <EntityTypeMapping TypeName="SQLServerDBModel.Refrigerator">
+        <MappingFragment StoreEntitySet="Refrigerators">
+          <ScalarProperty Name="RefrigeratorID" ColumnName="RefrigeratorID" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="SpecialCompartiments" ColumnName="SpecialCompartiments" />
+          <ScalarProperty Name="NoOfShelves" ColumnName="NoOfShelves" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WashingMachines">
+      <EntityTypeMapping TypeName="SQLServerDBModel.WashingMachine">
+        <MappingFragment StoreEntitySet="WashingMachines">
+          <ScalarProperty Name="WashID" ColumnName="WashID" />
+          <ScalarProperty Name="LoadingType" ColumnName="LoadingType" />
+          <ScalarProperty Name="LoadingCapacity" ColumnName="LoadingCapacity" />
+          <ScalarProperty Name="NoOfPrograms" ColumnName="NoOfPrograms" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

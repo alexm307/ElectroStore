@@ -1,0 +1,223 @@
+<div class="form-group">
+        @Html.LabelFor(Function(model) model.ElectronicProduct.ProductID, "ProductID", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.ElectronicProduct.ProductID, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.ElectronicProduct.ProductID, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.ElectronicProduct.Name, "Name", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.ElectronicProduct.Name, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.ElectronicProduct.Name, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.ElectronicProduct.Price, "Price", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.ElectronicProduct.Price, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.ElectronicProduct.Price, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.ElectronicProduct.Rating, "Rating", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.ElectronicProduct.Rating, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.ElectronicProduct.Rating, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.ElectronicProduct.Quantity, "Quantity", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.ElectronicProduct.Quantity, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.ElectronicProduct.Quantity, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.ElectronicProduct.Colour, "Colour", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.ElectronicProduct.Colour, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.ElectronicProduct.Colour, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.LaptopID, "LaptopID", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.LaptopID, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.LaptopID, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.Brand, "Brand", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.Brand, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.Brand, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.RAM, "RAM", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.RAM, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.RAM, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.CPU, "CPU ID", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.CPU, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.CPU, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.LaptopCPU.LaptopCPUID, "Confirm CPU ID", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.LaptopCPU.LaptopCPUID, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.LaptopCPU.LaptopCPUID, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.LaptopCPU.Brand, "CPU Brand", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.LaptopCPU.Brand, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.LaptopCPU.Brand, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.LaptopCPU.NumberOfCores, "CPU No. Of Cores", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.LaptopCPU.NumberOfCores, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.LaptopCPU.NumberOfCores, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.LaptopCPU.Frequency_mHz, "CPU Frequency", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.LaptopCPU.Frequency_mHz, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.LaptopCPU.Frequency_mHz, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.GPU, "GPU ID", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.GPU, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.GPU, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.LaptopGPU.LaptopGPUID, "Confirm GPU ID", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.LaptopGPU.LaptopGPUID, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.LaptopGPU.LaptopGPUID, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.LaptopGPU.Brand, "GPU Brand", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.LaptopGPU.Brand, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.LaptopGPU.Brand, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.LaptopGPU.Name, "GPU Name", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.LaptopGPU.Name, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.LaptopGPU.Name, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.LaptopGPU.Type, "GPU Type", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.LaptopGPU.Type, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.LaptopGPU.Type, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.LaptopGPU.DedicatedMemory_GB, "GPU Dedicated Memory", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.LaptopGPU.DedicatedMemory_GB, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.LaptopGPU.DedicatedMemory_GB, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.Battery, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.Battery, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.Battery, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.Display, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.Display, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.Display, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.Storage_GB, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.Storage_GB, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.Storage_GB, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.DisplaySize_inches, htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.DisplaySize_inches, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.DisplaySize_inches, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.GamingLaptop.RefreshRate_Hz, "RefreshRate (if gaming laptop)", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.GamingLaptop.RefreshRate_Hz, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.GamingLaptop.RefreshRate_Hz, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.GamingLaptop.ResponseTime_ms, "Response Time (if gaming laptop)", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.GamingLaptop.ResponseTime_ms, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.GamingLaptop.ResponseTime_ms, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.C2in1Laptops.Touchscreen, "Touchscreen (if 2in1 laptop)", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.C2in1Laptops.Touchscreen, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.C2in1Laptops.Touchscreen, "", New With {.class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(Function(model) model.C2in1Laptops.NumberOfScreens, "No. Of Screens (if 2in1 laptop)", htmlAttributes:=New With {.class = "control-label col-md-2"})
+        <div class="col-md-10">
+            @Html.EditorFor(Function(model) model.C2in1Laptops.NumberOfScreens, New With {.htmlAttributes = New With {.class = "form-control"}})
+            @Html.ValidationMessageFor(Function(model) model.C2in1Laptops.NumberOfScreens, "", New With {.class = "text-danger"})
+        </div>
+    </div>
